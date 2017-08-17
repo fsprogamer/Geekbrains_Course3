@@ -1,0 +1,32 @@
+﻿<Window x:Class="WpfTestMailSender.SendEndWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfTestMailSender"
+        mc:Ignorable="d"
+        Title="SendEndWindow" FontSize="36" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="SingleBorderWindow" Width="400" Height="175">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Label x:Name="lSendEnd" Content="Работа завершена" FontSize="36" HorizontalAlignment="Center" VerticalAlignment="Center" 
+                FontFamily="Arial"   >
+            <Label.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                    <GradientStop Color="#FFBAE4FF" Offset="0.013"/>
+                    <GradientStop Color="#FF398FDF" Offset="0.41800001263618469"/>
+                    <GradientStop Color="#FF006DD4" Offset="0.418"/>
+                    <GradientStop Color="#FF0A3E69" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+        </Label>
+
+        <Button x:Name="btnOK" Content="OK" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Margin="10" Click="btnOK_Click"/>
+
+    </Grid>
+</Window>

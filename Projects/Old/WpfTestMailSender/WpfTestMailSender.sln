@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfTestMailSender", "WpfTestMailSender\WpfTestMailSender.csproj", "{62717DDF-457F-4335-BFCD-262321C68983}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MailSender", "MailSender\MailSender.csproj", "{922D28CA-F592-459E-800C-90FAEF3C6637}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodePasswordDLL", "CodePasswordDLL\CodePasswordDLL.csproj", "{6835F704-3E65-49BF-812D-BE962A7B1262}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TabSwitcher", "TabSwitcher\TabSwitcher.csproj", "{D89C685D-6B3C-4239-B8B1-2083580E47F2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodePasswordDLL.Tests", "CodePasswordDLL.Tests\CodePasswordDLL.Tests.csproj", "{A2DEBBE1-13B8-4F46-BA90-07E109A2A70E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MailSender.Tests", "MailSender.Tests\MailSender.Tests.csproj", "{052AAE53-2161-46B1-A540-1AA746E7A0E3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{62717DDF-457F-4335-BFCD-262321C68983}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62717DDF-457F-4335-BFCD-262321C68983}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62717DDF-457F-4335-BFCD-262321C68983}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62717DDF-457F-4335-BFCD-262321C68983}.Release|Any CPU.Build.0 = Release|Any CPU
+		{922D28CA-F592-459E-800C-90FAEF3C6637}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{922D28CA-F592-459E-800C-90FAEF3C6637}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{922D28CA-F592-459E-800C-90FAEF3C6637}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{922D28CA-F592-459E-800C-90FAEF3C6637}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6835F704-3E65-49BF-812D-BE962A7B1262}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6835F704-3E65-49BF-812D-BE962A7B1262}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6835F704-3E65-49BF-812D-BE962A7B1262}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6835F704-3E65-49BF-812D-BE962A7B1262}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D89C685D-6B3C-4239-B8B1-2083580E47F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D89C685D-6B3C-4239-B8B1-2083580E47F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D89C685D-6B3C-4239-B8B1-2083580E47F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D89C685D-6B3C-4239-B8B1-2083580E47F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2DEBBE1-13B8-4F46-BA90-07E109A2A70E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2DEBBE1-13B8-4F46-BA90-07E109A2A70E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2DEBBE1-13B8-4F46-BA90-07E109A2A70E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2DEBBE1-13B8-4F46-BA90-07E109A2A70E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{052AAE53-2161-46B1-A540-1AA746E7A0E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{052AAE53-2161-46B1-A540-1AA746E7A0E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{052AAE53-2161-46B1-A540-1AA746E7A0E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{052AAE53-2161-46B1-A540-1AA746E7A0E3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

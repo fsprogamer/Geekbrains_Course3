@@ -1,0 +1,1 @@
+Powershell.exe -File CleanVSProject.ps1 >> res.txt

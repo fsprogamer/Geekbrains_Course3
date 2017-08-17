@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="WpfTestMailSender.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="NetworkCredentialUserName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">progamer@yandex.ru</Value>
+    </Setting>
+    <Setting Name="NetworkCredentialPassword" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">japan</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
