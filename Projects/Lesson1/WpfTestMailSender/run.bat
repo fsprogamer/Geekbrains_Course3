@@ -1,1 +1,1 @@
-Powershell.exe -File CleanVSProject.ps1 >> res.txt
+Powershell.exe -executionpolicy bypass -File CleanVSProject.ps1 >> res.txt
