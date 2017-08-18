@@ -1,0 +1,9 @@
+1. Порт smtp - 465 ?
+2. StartupUri - ?
+3. <Grid.RowDefinitions>
+     <RowDefinition/>
+     <RowDefinition/>
+     </Grid.RowDefinitions>
+   <Grid.ColumnDefinitions>
+     <ColumnDefinition/>
+   </Grid.ColumnDefinitions>
