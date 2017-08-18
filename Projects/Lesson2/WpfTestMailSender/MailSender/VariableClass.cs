@@ -11,7 +11,17 @@ namespace MailSender
             private static Dictionary<string, string> dicSenders = new Dictionary<string, string>()
             {
                 { "progamer@yandex.ru", PasswordClass.getPassword("kbqbo") },
-                { "sok74@yandex.ru", PasswordClass.getPassword("{3t1l2m6") }
+                { "fsprogamer@gmail.com", PasswordClass.getPassword("{3t1l2m6") }
             };
-        }
+
+            public static Dictionary<string, int> SmtpServers
+            {
+                get { return dicSmtpServers; }
+            }
+            private static Dictionary<string, int> dicSmtpServers = new Dictionary<string, int>()
+            {
+                { "smtp.yandex.ru", 25 },
+                { "smtp.gmail.com", 587 }
+            };
+    }
 }
