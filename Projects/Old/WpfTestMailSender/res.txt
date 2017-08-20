@@ -1,0 +1,7 @@
+Не удается загрузить файл C:\Mail_ru\Geekbrains_Course3\Projects\Old\WpfTestMai
+lSender\CleanVSProject.ps1, так как выполнение скриптов запрещено для данной си
+стемы. Введите "get-help about_signing" для получения дополнительных сведений.
+    + CategoryInfo          : NotSpecified: (:) [], ParentContainsErrorRecordE 
+   xception
+    + FullyQualifiedErrorId : RuntimeException
+ 
