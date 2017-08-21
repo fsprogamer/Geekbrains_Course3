@@ -1,9 +1,5 @@
-﻿using System;
+﻿using CodePasswordDLL;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using CodePasswordDLL;
 namespace WpfTestMailSender
 {
     public static class VariablesClass
