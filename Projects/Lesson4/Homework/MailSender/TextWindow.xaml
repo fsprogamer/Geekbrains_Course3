@@ -5,16 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MailSender"
         mc:Ignorable="d"
-        Title="Введите текст письма" Height="156.522" Width="300">
+        Title="Введите текст письма" Height="200" Width="300">
     <Grid>
-        <RichTextBox ToolTip="Введите текст письма" x:Name="richTextBox" HorizontalAlignment="Left" Height="100" Margin="10,0,0,0" VerticalAlignment="Top" Width="274">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <RichTextBox ToolTip="Введите текст письма"  Grid.Row="0" x:Name="richTextBox" HorizontalAlignment="Center" Height="120" Margin="5" VerticalAlignment="Top" Width="Auto">
             <FlowDocument>
                 <Paragraph>
                     <Run Text=""/>
                 </Paragraph>
             </FlowDocument>
         </RichTextBox>
-        <Button x:Name="button" Content="Ок" HorizontalAlignment="Left" Click="button_Click" Margin="115,103,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="button" Content="Ок" Grid.Row="1" HorizontalAlignment="Center" Click="button_Click"  Margin="5"  VerticalAlignment="Center" Width="75"/>
 
     </Grid>
 </Window>
