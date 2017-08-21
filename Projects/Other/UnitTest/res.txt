@@ -1,0 +1,33 @@
+Remove-Item : Не удается удалить элемент C:\Mail.ru\C#_Курс3\Geekbrains_Course3
+\Projects\Other\UnitTest\WpfTestMailSender\bin\Debug\WpfTestMailSender.vshost.e
+xe: Отказано в доступе по пути "WpfTestMailSender.vshost.exe".
+C:\Mail.ru\C#_Курс3\Geekbrains_Course3\Projects\Other\UnitTest\CleanVSProject.p
+s1:1 знак:81
++ Get-ChildItem .\ -include bin,obj,packages -Recurse | foreach ($_) { remove-i
+tem <<<<  $_.fullname -Force -Recurse }
+    + CategoryInfo          : PermissionDenied: (WpfTestMailSender.vshost.exe: 
+   FileInfo) [Remove-Item], UnauthorizedAccessException
+    + FullyQualifiedErrorId : RemoveFileSystemItemUnAuthorizedAccess,Microsoft 
+   .PowerShell.Commands.RemoveItemCommand
+Remove-Item : Не удается удалить элемент C:\Mail.ru\C#_Курс3\Geekbrains_Course3
+\Projects\Other\UnitTest\WpfTestMailSender\bin\Debug: Процесс не может получить
+ доступ к файлу "C:\Mail.ru\C#_Курс3\Geekbrains_Course3\Projects\Other\UnitTest
+\WpfTestMailSender\bin\Debug", так как этот файл используется другим процессом.
+C:\Mail.ru\C#_Курс3\Geekbrains_Course3\Projects\Other\UnitTest\CleanVSProject.p
+s1:1 знак:81
++ Get-ChildItem .\ -include bin,obj,packages -Recurse | foreach ($_) { remove-i
+tem <<<<  $_.fullname -Force -Recurse }
+    + CategoryInfo          : WriteError: (Debug:DirectoryInfo) [Remove-Item], 
+    IOException
+    + FullyQualifiedErrorId : RemoveFileSystemItemIOError,Microsoft.PowerShell 
+   .Commands.RemoveItemCommand
+Remove-Item : Не удается удалить элемент C:\Mail.ru\C#_Курс3\Geekbrains_Course3
+\Projects\Other\UnitTest\WpfTestMailSender\bin: Папка не пуста.
+C:\Mail.ru\C#_Курс3\Geekbrains_Course3\Projects\Other\UnitTest\CleanVSProject.p
+s1:1 знак:81
++ Get-ChildItem .\ -include bin,obj,packages -Recurse | foreach ($_) { remove-i
+tem <<<<  $_.fullname -Force -Recurse }
+    + CategoryInfo          : WriteError: (C:\Mail.ru\C#_К...tMailSender\bin:D 
+   irectoryInfo) [Remove-Item], IOException
+    + FullyQualifiedErrorId : RemoveFileSystemItemIOError,Microsoft.PowerShell 
+   .Commands.RemoveItemCommand

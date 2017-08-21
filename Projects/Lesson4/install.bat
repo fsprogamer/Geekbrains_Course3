@@ -1,0 +1,1 @@
+"c:\Program Files\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.6.1 Tools\gacutil.exe" -i "c:\Mail_ru\Geekbrains_Course3\Projects\Lesson3\WpfTestMailSender\CodePasswordDLL\bin\Release\CodePasswordDLL.dll" >>install.res
