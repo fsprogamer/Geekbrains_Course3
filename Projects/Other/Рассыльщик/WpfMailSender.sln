@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26430.12
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfMailSender", "WpfTestMailSender\WpfMailSender.csproj", "{4E5E5DC0-349E-4F43-A87D-26651C6D8D91}"
 EndProject
@@ -12,6 +12,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodePassword.Test", "CodePassword.Test\CodePassword.Test.csproj", "{BAE99DCE-72F7-417D-9A4A-EC5922F58059}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodePasswordDLL", "CodePasswordDLL\CodePasswordDLL.csproj", "{9C7A3D5A-9CEA-4E3D-A4D4-8D291E507981}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{96B2301C-163E-48CA-A69C-D6EBAFCFAA70}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{9C7A3D5A-9CEA-4E3D-A4D4-8D291E507981}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9C7A3D5A-9CEA-4E3D-A4D4-8D291E507981}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9C7A3D5A-9CEA-4E3D-A4D4-8D291E507981}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96B2301C-163E-48CA-A69C-D6EBAFCFAA70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96B2301C-163E-48CA-A69C-D6EBAFCFAA70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96B2301C-163E-48CA-A69C-D6EBAFCFAA70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96B2301C-163E-48CA-A69C-D6EBAFCFAA70}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -8,6 +8,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Windows;
 using System.Windows.Data;
+using WpfTestMailSender.Classes;
 
 namespace WpfTestMailSender
 {

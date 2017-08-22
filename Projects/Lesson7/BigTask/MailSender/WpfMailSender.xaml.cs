@@ -1,11 +1,11 @@
-﻿using System;
+﻿using Common;
+using EmailSendServiceDLL;
+using MailItem;
+using System;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Documents;
-using Common;
-using EmailSendServiceDLL;
-using MailItem;
 
 namespace MailSender
 {

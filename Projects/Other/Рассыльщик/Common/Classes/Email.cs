@@ -2,7 +2,7 @@
 using System.Collections.ObjectModel;
 using System.ComponentModel.DataAnnotations;
 
-namespace WpfTestMailSender
+namespace WpfTestMailSender.Classes
 {
 
     public class Email

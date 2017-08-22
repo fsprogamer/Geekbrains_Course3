@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 
-namespace WpfTestMailSender
+namespace WpfTestMailSender.Classes
 {
    public class SmtpServer
     {

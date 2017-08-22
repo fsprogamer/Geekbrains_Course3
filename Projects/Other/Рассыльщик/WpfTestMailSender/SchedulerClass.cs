@@ -4,6 +4,8 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Threading;
 using EmailSenDerviceDLL;
+using WpfTestMailSender.Classes;
+
 namespace WpfTestMailSender
 {
 

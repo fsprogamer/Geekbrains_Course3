@@ -2,11 +2,11 @@
 using System.Data.Entity;
 
 
-namespace Common
+namespace MailSender
 {
     public class SqlLocalDbContext : DbContext
     {
-        public SqlLocalDbContext() : base("SqlLocalDatabaseConnection")
+        public SqlLocalDbContext() : base("EFMailsAndSendersConnectionString")
         {
             Database.SetInitializer(new DropCreateDatabaseIfModelChanges<SqlLocalDbContext>());
         }

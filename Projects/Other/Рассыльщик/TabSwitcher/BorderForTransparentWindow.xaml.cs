@@ -36,7 +36,11 @@ namespace TabSwitcher
 
         IntPtr retInt = IntPtr.Zero;
 
-        public HwndSource HwndSource { get => hwndSource; set => hwndSource = value; }
+        public HwndSource HwndSource
+        {
+            get { return hwndSource; }
+            set { hwndSource = value; }
+        }
 
         public void Initialize()
         {
