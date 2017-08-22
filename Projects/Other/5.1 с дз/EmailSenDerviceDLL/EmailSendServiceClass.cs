@@ -1,16 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net;
 using System.Net.Mail;
-using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 
 namespace EmailSenDerviceDLL
 {
-   public class EmailSendServiceClass
+    public class EmailSendServiceClass
     {
         #region vars
         private string strLogin; // email c которого будет рассылаться почта

@@ -1,0 +1,41 @@
+﻿<Window x:Class="MVVM_Matches.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MVVM_Matches"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525" DataContext="{Binding Main, Source={StaticResource Locator}}">
+    <Grid>
+        <Grid.RowDefinitions>
+
+            <RowDefinition Height="auto"/>
+            <RowDefinition />
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <TextBlock ></TextBlock>
+        <ListBox SelectedItem="{Binding SelectedMatch}" ItemsSource="{Binding Matches}" HorizontalContentAlignment="Center" Name="listBox" Grid.Row="1">
+            <ListBox.ItemTemplate>
+                <DataTemplate >
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="25"/>
+                            <ColumnDefinition Width="25"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="{Binding HomeTeam}"/>
+                        <TextBlock Text="{Binding AwayTeam}" Grid.Column="3"/>
+                        <TextBox Text="{Binding HomeGoals}" Grid.Column="1"/>
+                        <TextBox Text="{Binding AwayGoals}" Grid.Column="2"/>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Button Grid.Row="2" HorizontalAlignment="Left" Width="150" Command="{Binding SaveCommand }"> SAVE </Button>
+        <Button Grid.Row="2" HorizontalAlignment="Right" Width="150" Height="20" Command="{Binding DoSmth}" > OK</Button>
+    </Grid>
+</Window>

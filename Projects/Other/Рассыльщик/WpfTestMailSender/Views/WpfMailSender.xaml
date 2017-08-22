@@ -1,0 +1,419 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfTestMailSender"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+    
+
+    xmlns:TabSwitcher="clr-namespace:TabSwitcher;assembly=TabSwitcher"
+   
+    x:Class="WpfTestMailSender.WpfMailSender"
+        mc:Ignorable="d"
+        Title="Рассыльщик" Height="600" Width="900" Icon="Images/letter.png" Background="Transparent" WindowStyle="None" AllowsTransparency="True">
+
+    <Grid Width="auto" >
+        <TabSwitcher:BorderForTransparentWindow  HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+        <Grid Margin="15,23,15,20">
+        <TabControl BorderBrush="Transparent" x:Name="tabControl" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
+            <TabItem BorderBrush="Transparent" Header="База отправителей и адресатов">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="10*"/>
+                        <RowDefinition Height="15*"/>
+                    </Grid.RowDefinitions>
+                    <GroupBox Grid.Row="0"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="1*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="70"/>
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <GroupBox Grid.Row="0" Grid.Column="0" Header="Добавить отправителя" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" >
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="20*"/>
+                                        <ColumnDefinition Width="20*"/>
+                                        <ColumnDefinition Width="20*"/>
+                                        <ColumnDefinition Width="20*"/>
+                                        <ColumnDefinition Width="20*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBox Margin="5" Grid.Column="0" x:Name="tbxSenderName"  HorizontalAlignment="Stretch" VerticalAlignment="Center" TextWrapping="Wrap" Text="Имя" />
+                                    <TextBox Margin="5"  Grid.Column="1" x:Name="tbxSenderAdress"  HorizontalAlignment="Stretch" VerticalAlignment="Center" TextWrapping="Wrap" Text="Почта" />
+                                    <PasswordBox Name="psbox" ToolTip="Пароль" Margin="5"  Height="30" Grid.Column="2"   HorizontalAlignment="Stretch" VerticalAlignment="Center"/>
+                                        <ComboBox DisplayMemberPath = "Smtp" Name="cbxSmtpServer" Margin="5"  Height="30" Grid.Column="3"   HorizontalAlignment="Stretch" VerticalAlignment="Center"/>
+                                    <Button Margin="0" Grid.Column="4" Click="BtnAddSender_Click"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                                        <StackPanel Orientation="Horizontal">
+                                            <Image Source="Images/add.png" Width="16" Height="16" />
+                                            <TextBlock Margin="3,0,0,0" Text="Добавить" VerticalAlignment="Center" />
+                                        </StackPanel>
+                                    </Button>
+
+                                </Grid>
+                            </GroupBox>
+                            <DataGrid HorizontalScrollBarVisibility="Hidden" Margin="3" Grid.Row="1" Grid.Column="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" CanUserAddRows="False" SelectionMode="Single" ItemsSource="{Binding}" x:Name="dgSenders"  AutoGenerateColumns="False"  >
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="Id" Width="30" Binding="{Binding EmailId, Mode=OneWay}" />
+                                    <DataGridTextColumn  Header="Имя" Width="1*"  Binding="{Binding Name}" />
+                                    <DataGridTextColumn  Header="E-mail" Width="2*" Binding="{Binding EmailAdress}" />
+                                    <DataGridTemplateColumn  Header="Smtp " Width="2*">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <Grid>
+                                                    <ComboBox x:Name="cbSmtpServers" DisplayMemberPath="Smtp"  SelectedItem="{Binding SmtpServer}"
+                                                              ItemsSource="{Binding Path=DataContext.SmtpServers, 
+                                                               RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}"/>
+                                                </Grid>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                    <DataGridTemplateColumn  Header="По умолчанию " Width="50">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <Grid>
+                                                    <CheckBox ToolTip="Используется по умолчанию для отправки Email" IsChecked="{Binding IsDefault}"/>
+                                                </Grid>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                    <DataGridTemplateColumn Header="  X" Width="30">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <Grid>
+                                                    <Button Tag="{Binding}" Click="button_ClickDeleteSender"  HorizontalAlignment="Left" Height="15" Width="14.727" Margin="5,2,0,0"  VerticalAlignment="Top">
+                                                        <Image Source="Images/delete.png" HorizontalAlignment="Right"/>
+                                                    </Button>
+                                                </Grid>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                            <GroupBox Header="Добавить smtp сервер"  Grid.Row="0" Grid.Column="1"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="20*"/>
+                                        <ColumnDefinition Width="20*"/>
+                                        <ColumnDefinition Width="20*"/>
+
+                                    </Grid.ColumnDefinitions>
+                                    <TextBox Margin="5" Grid.Column="0" x:Name="tbxSmtp"  HorizontalAlignment="Stretch" VerticalAlignment="Center" TextWrapping="Wrap" Text="smtp server" />
+                                    <TextBox Margin="5"  Grid.Column="1" x:Name="tbxPort"  HorizontalAlignment="Stretch" VerticalAlignment="Center" TextWrapping="Wrap" Text="Порт" />
+                                    <Button Margin="3" Grid.Column="3" Click="BtnAddSmtp_Click"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
+                                        <StackPanel Orientation="Horizontal">
+                                            <Image Source="Images/add.png" Width="16" Height="16" />
+                                            <TextBlock Margin="3,0,0,0" Text="Добавить" VerticalAlignment="Center" />
+                                        </StackPanel>
+                                    </Button>
+
+                                </Grid>
+                            </GroupBox>
+                                <DataGrid HorizontalScrollBarVisibility="Hidden" Margin="3" CanUserAddRows="False" SelectionMode="Single" ItemsSource="{Binding}" x:Name="dgSmtpServer"  AutoGenerateColumns="False" 
+                               Grid.Row="1" Grid.Column="1"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn  Header="Smtp server" Width="1*"  Binding="{Binding Smtp}" />
+                                    <DataGridTextColumn  Header="Порт" Width="2*" Binding="{Binding Port}" />
+
+                                        <DataGridTemplateColumn Header="  X" Width="30">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <Grid>
+                                                    <Button Tag="{Binding}" Click="button_ClickDeleteSmtp"  HorizontalAlignment="Left" Height="15" Width="14.727" Margin="5,2,0,0"  VerticalAlignment="Top">
+                                                        <Image Source="Images/delete.png" HorizontalAlignment="Right"/>
+                                                    </Button>
+                                                </Grid>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </Grid>
+                    </GroupBox>
+
+                    <GroupBox Grid.Row="1">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="20*"/>
+                                <RowDefinition Height="9*"/>
+                            </Grid.RowDefinitions>
+                                <DataGrid HorizontalScrollBarVisibility="Hidden" Grid.Row="0" CanUserAddRows="False" SelectionMode="Single" ItemsSource="{Binding}" x:Name="dgEmails"  AutoGenerateColumns="False" >
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="Id" Width="30" Binding="{Binding EmailId, Mode=OneWay}" />
+                                    <DataGridTextColumn Header="Имя" Width="1*"  Binding="{Binding Name}" />
+                                    <DataGridTextColumn  Header="E-mail" Width="1*" Binding="{Binding EmailAdress}" />
+                                        <DataGridTemplateColumn Header="  X" Width="30">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <Grid>
+                                                    <Button Tag="{Binding}" Click="button_ClickDeleteMail"  HorizontalAlignment="Left" Height="15" Width="14.727" Margin="5,2,0,0"  VerticalAlignment="Top">
+                                                        <Image Source="Images/delete.png" HorizontalAlignment="Right"/>
+                                                    </Button>
+                                                </Grid>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                            <GroupBox Margin="3" Grid.Row="1" Header="Добавить Email получателя" HorizontalAlignment="Left"  VerticalAlignment="Stretch" >
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="20*"/>
+                                        <ColumnDefinition Width="20*"/>
+                                        <ColumnDefinition Width="15*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBox Width="150" Grid.Column="0" Name="txblName"  HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" Text="Обращение" />
+                                    <TextBox Width="150" Grid.Column="1" Name="txblAdress"  HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" Text="Почта" />
+
+                                    <Button Grid.Column="2" Click="BtnAddAddress_Click"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="111">
+                                        <StackPanel Orientation="Horizontal">
+                                            <Image Source="Images/add.png" Width="16" Height="16" />
+                                            <TextBlock Margin="3,0,0,0" Text="Добавить" VerticalAlignment="Center" />
+                                        </StackPanel>
+                                    </Button>
+                                </Grid>
+                            </GroupBox>
+                            <Button Grid.Row="2" Content="GenerateExcel" HorizontalAlignment="Right"  VerticalAlignment="Center " Width="95" Click="Button_Click"/>
+
+                        </Grid>
+                    </GroupBox>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Планирование рассылок" x:Name="tabItemPlanner">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="3*"/>
+                    </Grid.RowDefinitions>
+                    <GroupBox Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Header="Новая рассылка" >
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="1*"/>
+                                <RowDefinition Height="1*"/>
+                                <RowDefinition Height="1*"/>
+
+                            </Grid.RowDefinitions>
+                            <xctk:DateTimePicker Margin="5" Grid.Row="0" Grid.Column="0" Format="Custom" FormatString="HH:mm" x:Name="tbTimePicker"   HorizontalAlignment="Stretch" Height="23"   Text="TextBox" VerticalAlignment="Center" />
+                            <Button  Height="30" Grid.RowSpan="1"  Margin="4" Grid.Column="3"  x:Name="btnSendPlanned"   HorizontalAlignment="Center"  VerticalAlignment="Center"  Click="BtnSendPlanned_Click" >
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Margin="5" Source="Images/clock.png" Width="16" Height="16" />
+                                    <TextBlock TextWrapping="Wrap" TextAlignment="Center" Margin="0,0,0,0" Text="Отправить запланированно" VerticalAlignment="Center"   />
+                                </StackPanel>
+                            </Button>
+
+                            <Button Height="30" Margin="0.4,0.6,0.4,0" Grid.Column="3" Grid.Row="1" Name="btSendNow"   HorizontalAlignment="Stretch"  VerticalAlignment="Top"   Click="BtnSend_Click" Grid.RowSpan="2"  >
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="Images/letter.png" Width="16" Height="16" />
+                                    <TextBlock Margin="3,0,0,0" Text="Отправить сейчас" VerticalAlignment="Center" />
+                                </StackPanel>
+                            </Button>
+                                <ComboBox Name="cbSenders" DisplayMemberPath = "EmailAdress" Grid.Row="1" HorizontalAlignment="Stretch"  VerticalAlignment="Center" />
+                            <TextBox Margin="5" Grid.Column="1" Grid.RowSpan="3" Name="txBoxTextMail" HorizontalAlignment="Stretch"  Height="auto"  TextWrapping="Wrap" Text="Текст письма" VerticalAlignment="Stretch" />
+
+                            <ListBox SelectionMode="Multiple" Grid.Column="2" Grid.Row="0" Grid.RowSpan="3"  Name="listBoxEmails" HorizontalAlignment="Stretch" Margin="5" VerticalAlignment="Stretch" HorizontalContentAlignment="Stretch">
+                                <ListBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <StackPanel CanHorizontallyScroll="False" Orientation="Horizontal">
+                                            <TextBlock Text="{Binding EmailAdress}"/>
+                                        </StackPanel>
+
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
+                            </ListBox>
+                        </Grid>
+                    </GroupBox>
+
+                        <GroupBox Name="gpbx" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Header="Запланированные рассылки" >
+
+
+                            <Grid Margin="2">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="2*"/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <DataGrid HorizontalScrollBarVisibility="Hidden" CanUserAddRows="False" Margin="2" AutoGenerateColumns="False" x:FieldModifier="public" Name="dgMailings" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
+                                    <DataGrid.Columns>
+                                        <DataGridTextColumn Binding="{Binding MailingId, Mode=OneWay}" IsReadOnly="True" Header="Id"  Width="30"/>
+
+                                        <DataGridTemplateColumn Width="1*" Header="Дата и время" >
+                                            <DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <Grid>
+                                                        <xctk:DateTimePicker Format="Custom"  FormatString="dd.MM.yyyy HH:mm " Value="{Binding DateAndTime}"/>
+                                                    </Grid>
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
+                                        </DataGridTemplateColumn>
+
+                                        <DataGridTextColumn Binding="{Binding Text}" Header="Текст"  Width="1*"/>
+
+
+                                        <DataGridTemplateColumn  Header="Отправлено" Width="80">
+                                            <DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <Grid>
+                                                        <CheckBox IsHitTestVisible="False" Width="50" IsChecked="{Binding IsSent, Mode=OneWay}"/>
+                                                    </Grid>
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
+                                        </DataGridTemplateColumn>
+                                        <DataGridTemplateColumn x:Name="columnSend1" Header="Отправить сейчас" Visibility="Visible" Width="110">
+                                            <DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <Grid>
+                                                        <Button x:Name="button1" Tag="{Binding}"  Click="button_dgMailingsMailNow"  HorizontalAlignment="Left" Height="20"  VerticalAlignment="Top" >
+                                                            <StackPanel Orientation="Horizontal">
+                                                                <Image Source="Images/letter.png" Height="20" Width="20" HorizontalAlignment="Left"/>
+                                                            </StackPanel>
+                                                        </Button>
+                                                    </Grid>
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
+                                        </DataGridTemplateColumn>
+                                        <DataGridTemplateColumn x:Name="columnDelete1" Header="Удалить" Visibility="Visible" Width="60">
+                                            <DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <Grid>
+                                                        <Button Tag="{Binding}" Click="button_ClickDeleteMailing"  HorizontalAlignment="Left" Height="15" Width="14.727" Margin="5,2,0,0"  VerticalAlignment="Top" >
+                                                            <Image Source="Images/delete.png" HorizontalAlignment="Right"/>
+                                                        </Button>
+                                                    </Grid>
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
+                                        </DataGridTemplateColumn>
+                                    </DataGrid.Columns>
+                                </DataGrid>
+
+                                <Grid Margin="5,0,0,0"  Grid.Column="1">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="auto"/>
+                                        <RowDefinition />
+                                        <RowDefinition Height="auto"/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+                                    <ListBox Name="listBoxMailing" HorizontalContentAlignment="Center" Margin="2" Grid.Row="3" ItemsSource="{Binding SelectedItem.Recipients, ElementName=dgMailings, Mode=TwoWay}" >
+                                        <ListBox.ItemTemplate>
+                                            <DataTemplate>
+                                                <StackPanel Orientation="Horizontal">
+                                                    <TextBlock Margin="2" Text="{Binding Name}"/>
+                                                    <TextBlock Margin="2" Text="{Binding EmailAdress}"/>
+                                                    <Button Tag="{Binding}" Click="button_ClickDeleteMailingRecipient"  HorizontalAlignment="Left" Height="15" Width="14.727" Margin="5,2,0,0"  VerticalAlignment="Top" >
+                                                        <Image Source="Images/delete.png" HorizontalAlignment="Right"/>
+                                                    </Button>
+
+                                                </StackPanel>
+                                            </DataTemplate>
+
+                                        </ListBox.ItemTemplate>
+                                    </ListBox>
+                                    <TextBlock Margin="2" Grid.Row="2" HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="Получатели" />
+                                    <TextBlock Margin="2" Grid.Row="0" HorizontalAlignment="Stretch"  TextWrapping="Wrap" Text="Текст письма" VerticalAlignment="Top"/>
+                                    <TextBox  TextAlignment="Justify" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" Height="auto" Margin="2" Grid.Row="1" HorizontalAlignment="Stretch"   TextWrapping="Wrap" Text="{Binding SelectedItem.Text, ElementName=dgMailings, Mode=TwoWay}" VerticalAlignment="Stretch"/>
+                                    <Button VerticalAlignment="Bottom" Grid.Row="4" Content=" Добавить получателя" Click="Button_Click_1"></Button>
+                                    <ComboBox Name="cbxEmails" DisplayMemberPath = "EmailAdress" HorizontalAlignment="Left"  Grid.Row="4" VerticalAlignment="Top" />
+
+                                </Grid>
+                            </Grid>
+                        </GroupBox>
+
+                    </Grid>
+            </TabItem>
+            <TabItem Header="Статистика">
+                <Grid Background="#FFE5E5E5">
+                        <GroupBox Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Header="Запланированные рассылки" >
+
+
+                            <Grid Margin="2">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="2*"/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <DataGrid HorizontalScrollBarVisibility="Hidden" IsReadOnly="True" CanUserAddRows="False" Margin="2" AutoGenerateColumns="False" x:FieldModifier="public" Name="dgMailingsStatistics" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
+                                    <DataGrid.Columns>
+                                        <DataGridTextColumn Binding="{Binding MailingId, Mode=OneWay}" IsReadOnly="True" Header="Id"  Width="30"/>
+
+                                        <DataGridTemplateColumn Width="1*" Header="Дата и время" >
+                                            <DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <Grid>
+                                                       
+                                                        <xctk:DateTimePicker Format="Custom" IsReadOnly="True"  FormatString="dd.MM.yyyy HH:mm " Value="{Binding DateAndTime}"/>
+                                                    </Grid>
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
+                                        </DataGridTemplateColumn>
+
+                                        <DataGridTextColumn Binding="{Binding Text}" Header="Текст"  Width="1*"/>
+
+
+                                        <DataGridTemplateColumn  Header="отправлено " Width="50">
+                                            <DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <Grid>
+                                                        <CheckBox IsHitTestVisible="False" Width="50" IsChecked="{Binding IsSent}"/>
+                                                    </Grid>
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
+                                        </DataGridTemplateColumn>
+                                        <DataGridTemplateColumn  Header="Отправить сейчас" Visibility="Visible" Width="1*">
+                                            <DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <Grid>
+                                                        <Button x:Name="button1" Tag="{Binding}"  Click="button_dgMailingsStatisticsMailNow"  HorizontalAlignment="Left" Height="20"  VerticalAlignment="Top" >
+                                                            <StackPanel Orientation="Horizontal">
+                                                                <Image Source="Images/letter.png" Height="20" Width="20" HorizontalAlignment="Left"/>
+                                                            </StackPanel>
+                                                        </Button>
+                                                    </Grid>
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
+                                        </DataGridTemplateColumn>
+                                       
+                                    </DataGrid.Columns>
+                                </DataGrid>
+
+                                <Grid Margin="5,0,0,0"  Grid.Column="1">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="auto"/>
+                                        <RowDefinition />
+                                        <RowDefinition Height="auto"/>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+                                    <ListBox Name="listBoxEmailsdgStatistics" HorizontalContentAlignment="Center" Margin="2" Grid.Row="3" ItemsSource="{Binding SelectedItem.Recipients, ElementName=dgMailingsStatistics, Mode=TwoWay}" >
+                                        <ListBox.ItemTemplate>
+                                            <DataTemplate>
+                                                <StackPanel Orientation="Horizontal">
+                                                    <TextBlock Margin="2" Text="{Binding Name}"/>
+                                                    <TextBlock Margin="2" Text="{Binding EmailAdress}"/>
+                                                  
+
+                                                </StackPanel>
+                                            </DataTemplate>
+                                        </ListBox.ItemTemplate>
+                                    </ListBox>
+                                    <TextBlock Margin="2" Grid.Row="2" HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="Получатели" />
+                                    <TextBlock Margin="2" Grid.Row="0" HorizontalAlignment="Stretch"  TextWrapping="Wrap" Text="Текст письма" VerticalAlignment="Top"/>
+                                    <TextBox  TextAlignment="Justify" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" Height="auto" Margin="2" Grid.Row="1" HorizontalAlignment="Stretch"   TextWrapping="Wrap" Text="{Binding SelectedItem.Text, ElementName=dgMailingsStatistics, Mode=TwoWay}" VerticalAlignment="Stretch"/>
+
+                                </Grid>
+                            </Grid>
+                        </GroupBox>
+
+                    </Grid>
+            </TabItem>
+        </TabControl>
+        </Grid>
+    </Grid>
+
+
+</Window>

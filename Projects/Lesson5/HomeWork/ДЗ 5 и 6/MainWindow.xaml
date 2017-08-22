@@ -1,0 +1,43 @@
+﻿<Window x:Class="ДЗ_5_и_6.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ДЗ_5_и_6"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="391.956" Width="525">
+    <Grid>
+        <GroupBox Margin="10,21,299.4,0" Header="Факториал и сумма" Height="162" VerticalAlignment="Top" >
+            <StackPanel>
+                <TextBox Name="txbFact" Text="21" HorizontalAlignment="Center"  Margin="5,5,0,5" VerticalAlignment="Top" Width="98"/>
+
+                <Button Content="Факториал" HorizontalAlignment="Center" Margin="5" VerticalAlignment="Top" Width="75" Click="ButtonFactorial_Click"/>
+
+                <Button Content="Сумма" HorizontalAlignment="Center"  Margin="5" VerticalAlignment="Top" Width="75" Click="ButtonSum_Click"/>
+                <TextBlock TextWrapping="Wrap" Text="Результат" TextAlignment="Center" Name="txblResult"  Margin="-2,5,-1.2,5" VerticalAlignment="Top" Height="46"/>
+            </StackPanel>
+        </GroupBox>
+        <GroupBox Margin="253,21,56.4,0" Header="Парсим CSV файл" Height="162" VerticalAlignment="Top" >
+            <StackPanel>
+
+                <Button Content="Начать парсинг" HorizontalAlignment="Center" Margin="5" VerticalAlignment="Top" Width="113" Click="Button_Click"/>
+                <ProgressBar x:Name="progressBar" HorizontalAlignment="Center" Height="21"  Width="100"/>
+            </StackPanel>
+        </GroupBox>
+        <GroupBox Margin="10,188,271.4,10.4" Header="Матрицы" >
+            <StackPanel>
+
+                <Button Content="Создать и перемножить матрицы" HorizontalAlignment="Center" Margin="5" VerticalAlignment="Top" Width="190" Click="ButtonMatrix_Click"/>
+            </StackPanel>
+        </GroupBox>
+        <GroupBox Margin="253,198,28.4,0.4" Header="Файлы" >
+            <StackPanel>
+
+                <Button Content="Обработка файлов" HorizontalAlignment="Center" Margin="5" VerticalAlignment="Top" Width="190" Click="Button_Click_1"/>
+            </StackPanel>
+        </GroupBox>
+
+
+
+    </Grid>
+</Window>
