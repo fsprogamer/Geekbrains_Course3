@@ -53,7 +53,7 @@ namespace MailSender
             cbSmtpSelect.SelectedValuePath = "Value";
 
             //DBClass db = new DBClass();           
-            dgEmails.ItemsSource = emailController.GetEmails();           
+            dgEmails.ItemsSource = emailController.Context.Emails.Local;// .GetEmails();           
         }
 
         private void miClose_Click(object sender, RoutedEventArgs e)

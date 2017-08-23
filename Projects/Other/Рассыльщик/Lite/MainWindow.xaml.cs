@@ -27,7 +27,7 @@ namespace Lite
             InitializeComponent();
             rep = new Repository(true);
 
-            DbSet<Email> dbset = rep.Context.Emails.Local;
+            //DbSet<Email> dbset = rep.Context.Emails.Local;
         }
     }
 }
