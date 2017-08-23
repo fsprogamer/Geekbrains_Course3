@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using Common.Model;
 using System.Collections.Generic;
+using MailSender.DAL;
 
 namespace MailSender
 {

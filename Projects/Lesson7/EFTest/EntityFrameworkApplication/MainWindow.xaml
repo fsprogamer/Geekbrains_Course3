@@ -69,6 +69,16 @@
                 <winForms:ReportViewer x:Name="ReportViewer"/>
             </WindowsFormsHost>
         </TabItem>
+        <TabItem Header="Excel">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Button Content="Сформировать отчет в Excel(EPPlus)" Click="Button_Click" Width="175" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5" />
+                <Button Content="Сформировать отчет в Excel(ComInterop)" Click="Button_Click_ComInterop" Width="175" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5" Grid.Row="1"/>
+            </Grid>
+        </TabItem>
     </TabControl>
 
 </Window>

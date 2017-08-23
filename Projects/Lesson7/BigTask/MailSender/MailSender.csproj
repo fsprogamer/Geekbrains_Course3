@@ -42,6 +42,10 @@
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net40\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="EPPlus, Version=4.1.0.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.4.1.0\lib\net40\EPPlus.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.configuration" />
@@ -88,6 +92,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="DAL\EmailController.cs" />
+    <Compile Include="DAL\EmailRepo.cs" />
+    <Compile Include="DAL\GenericRepo.cs" />
+    <Compile Include="DAL\IEmailController.cs" />
+    <Compile Include="DAL\IEmailRepo.cs" />
+    <Compile Include="DAL\IGenericRepo.cs" />
     <Compile Include="Data.cs" />
     <Compile Include="DBClass.cs" />
     <Compile Include="SchedulerClass.cs" />
@@ -104,7 +114,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="AppConfigClass.cs" />
-    <Compile Include="SqlLocalDbContext.cs" />
+    <Compile Include="DAL\SqlLocalDbContext.cs" />
     <Compile Include="TextWindow.xaml.cs">
       <DependentUpon>TextWindow.xaml</DependentUpon>
     </Compile>
@@ -185,6 +195,7 @@
       <Name>TabSwitcher</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

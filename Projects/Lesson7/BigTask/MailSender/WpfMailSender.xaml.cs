@@ -1,7 +1,13 @@
 ﻿using Common;
+using Common.Model;
 using EmailSendServiceDLL;
 using MailItem;
+using MailSender.DAL;
+using OfficeOpenXml;
+using OfficeOpenXml.Style;
 using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
@@ -16,9 +22,21 @@ namespace MailSender
     {
         ComboBox cbSenderSelect;
         ComboBox cbSmtpSelect;
+
+        EmailController emailController;
+        //ObservableCollection<Email> oEmail;
+
         public WpfMailSender()
         {
             InitializeComponent();
+
+           // SqlLocalDbContext _context = new SqlLocalDbContext();
+            //_context.Emails.Local
+
+            emailController = new EmailController();
+            
+            //DBClass dbclass = new DBClass();
+            //List<Email> Emails = dbclass.Emails;
 
             cbSenderSelect = (ComboBox)SenderChoice.FindName("cbSelect");
             cbSenderSelect.ItemsSource = VariablesClass.Senders;
@@ -34,8 +52,8 @@ namespace MailSender
             cbSmtpSelect.DisplayMemberPath = "Key";
             cbSmtpSelect.SelectedValuePath = "Value";
 
-            DBClass db = new DBClass();
-            dgEmails.ItemsSource = db.Emails;
+            //DBClass db = new DBClass();           
+            dgEmails.ItemsSource = emailController.GetEmails();           
         }
 
         private void miClose_Click(object sender, RoutedEventArgs e)
@@ -159,6 +177,45 @@ namespace MailSender
                 w.Closed += (a1, b1) => l.MailText = Data.MailText;
                 w.ShowDialog();
             };
+        }
+
+        private void ReportButton_Click(object sender, RoutedEventArgs e)
+        {
+
+            using (ExcelPackage excelPackage = new ExcelPackage())
+            {
+
+                //Создаем лист   
+                ExcelWorksheet Worksheet = excelPackage.Workbook.Worksheets.Add("Report");
+                //Загружаем БД на лист, начиная с ячейки А2     
+                Worksheet.Cells["A2"].LoadFromCollection(emailController.GetEmails());
+                Worksheet.Cells["A1"].Value = "Id";
+                Worksheet.Cells["B1"].Value = "Adress";
+                Worksheet.Cells["C1"].Value = "Name";
+                Worksheet.Cells.AutoFitColumns();
+                //Изменяем стиль всего диапозона ячеек (первый ряд)   
+                using (ExcelRange range = Worksheet.Cells["A1:XFD1"])
+                {
+                    range.Style.Font.Bold = true;
+                    range.Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+                    range.Style.VerticalAlignment = ExcelVerticalAlignment.Center;
+                    range.Style.Fill.PatternType = ExcelFillStyle.LightGray;
+                }
+                excelPackage.SaveAs(new System.IO.FileInfo("test.xlsx"));
+            }
+        }
+
+        private void BtnAddAddress_Click(object sender, RoutedEventArgs e)
+        {
+            Email em = new Email() { Value = txblAdress.Text, Name = txblName.Text };
+            emailController.InsertEmail(em);
+            dgEmails.ItemsSource = emailController.GetEmails();
+        }
+
+        private void button_ClickDeleteMail(object sender, RoutedEventArgs e)
+        {
+            emailController.DeleteEmail(((Email)dgEmails.SelectedItem).Id);
+            dgEmails.ItemsSource = emailController.GetEmails();
         }
     }
 }

@@ -1,0 +1,3 @@
+Добавить в VS компонент SQL Server Data Tools
+Добавить в nuget Microsoft.ReportViewer.Runtime.Common и Microsoft.ReportViewer.VS2015.WinForms
+Добавить в nuget EPPlus 

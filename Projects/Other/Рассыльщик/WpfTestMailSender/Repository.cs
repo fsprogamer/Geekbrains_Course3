@@ -108,8 +108,7 @@ namespace WpfTestMailSender
             Context.Emails.First(x => x.Id == em.Id).Mailing.Remove(m);
             Context.SaveChanges();
         }
-
-
+        
         public void SaveChanges()
         {
             Context.SaveChanges();

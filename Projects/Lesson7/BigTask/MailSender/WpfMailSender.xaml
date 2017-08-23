@@ -22,6 +22,7 @@
                         <Grid.RowDefinitions>
                             <RowDefinition Height="60"/>
                             <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition/>
@@ -81,7 +82,46 @@
                                 </Button-->
                             </ToolBar>
                         </ToolBarTray>
-                        <DataGrid x:Name="dgEmails" HorizontalAlignment="Stretch" Grid.Row="1" VerticalAlignment="Stretch"/>
+                        <!--DataGrid x:Name="dgEmails" HorizontalAlignment="Stretch" Grid.Row="2" VerticalAlignment="Stretch"/-->
+                        <DataGrid HorizontalScrollBarVisibility="Hidden" Grid.Row="2" CanUserAddRows="False" SelectionMode="Single" ItemsSource="{Binding}" x:Name="dgEmails"  AutoGenerateColumns="False" >
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Id" Width="30" Binding="{Binding Id, Mode=TwoWay}" />
+                                <DataGridTextColumn Header="Имя" Width="1*"  Binding="{Binding Name}" />
+                                <DataGridTextColumn  Header="E-mail" Width="1*" Binding="{Binding Value}" />
+                                <DataGridTemplateColumn Header="  X" Width="30">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Grid>
+                                                <Button Tag="{Binding}" Click="button_ClickDeleteMail"  HorizontalAlignment="Left" Height="15" Width="14.727" Margin="5,2,0,0"  VerticalAlignment="Top">
+                                                    <Image Source="Images/delete.png" HorizontalAlignment="Right"/>
+                                                </Button>
+                                            </Grid>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+
+                        <GroupBox Margin="3" Grid.Row="1" Header="Добавить Email получателя" HorizontalAlignment="Left"  VerticalAlignment="Stretch" >
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="20*"/>
+                                    <ColumnDefinition Width="20*"/>
+                                    <ColumnDefinition Width="15*"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBox Width="150" Grid.Column="0" Name="txblName"  HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" Text="Имя" />
+                                <TextBox Width="150" Grid.Column="1" Name="txblAdress"  HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" Text="Почта" />
+
+                                <Button Grid.Column="2" Click="BtnAddAddress_Click"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="111">
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image Source="Images/add.png" Width="16" Height="16" />
+                                        <TextBlock Margin="3,0,0,0" Text="Добавить" VerticalAlignment="Center" />
+                                    </StackPanel>
+                                </Button>
+                            </Grid>
+                        </GroupBox>
+                        <Button Grid.Row="1" Content="GenerateExcel" HorizontalAlignment="Right"  VerticalAlignment="Center" Width="95" Click="ReportButton_Click" Margin="3"/>
+
                     </Grid>
                 </TabItem>
                 <TabItem Header="Планировщик" x:Name="tabPlanner" >

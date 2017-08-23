@@ -41,8 +41,8 @@ namespace WpfTestMailSender
             cbxSmtpServer.SelectedIndex = 0;
             SmtpServers = rep.Context.SmtpServers.Local;
 
-            dgMailings.ItemsSource = rep.MailingsPlanned;
-            dgMailingsStatistics.ItemsSource = rep.MailingsDone;
+            //dgMailings.ItemsSource = rep.MailingsPlanned;
+            //dgMailingsStatistics.ItemsSource = rep.MailingsDone;
 
             dgEmails.ItemsSource = rep.Context.Emails.Local;
             listBoxEmails.ItemsSource = rep.Context.Emails.Local;

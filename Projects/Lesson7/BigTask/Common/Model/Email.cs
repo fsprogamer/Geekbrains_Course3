@@ -2,12 +2,9 @@
 
 namespace Common.Model
 {
-    public class Email
+    public class Email:Entity
     {
-        [Key]
-        public int EmailId { get; set; }
         public string Value { get; set; }
         public string Name { get; set; }
-
     }
 }
