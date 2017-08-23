@@ -1,0 +1,163 @@
+Remove-Item : Не удается удалить элемент C:\Mail.ru\C#_Курс3\Geekbrains_Course3
+\Projects\Other\Рассыльщик\packages\EntityFramework.6.1.3\lib\net40\EntityFrame
+work.dll: Процесс не может получить доступ к файлу "EntityFramework.dll", так к
+ак этот файл используется другим процессом.
+C:\Mail.ru\C#_Курс3\Geekbrains_Course3\Projects\Other\Рассыльщик\CleanVSProject
+.ps1:1 знак:81
++ Get-ChildItem .\ -include bin,obj,packages -Recurse | foreach ($_) { remove-i
+tem <<<<  $_.fullname -Force -Recurse }
+    + CategoryInfo          : WriteError: (EntityFramework.dll:FileInfo) [Remo 
+   ve-Item], IOException
+    + FullyQualifiedErrorId : RemoveFileSystemItemIOError,Microsoft.PowerShell 
+   .Commands.RemoveItemCommand
+Remove-Item : Не удается удалить элемент C:\Mail.ru\C#_Курс3\Geekbrains_Course3
+\Projects\Other\Рассыльщик\packages\EntityFramework.6.1.3\lib\net40: Папка не п
+уста.
+C:\Mail.ru\C#_Курс3\Geekbrains_Course3\Projects\Other\Рассыльщик\CleanVSProject
+.ps1:1 знак:81
++ Get-ChildItem .\ -include bin,obj,packages -Recurse | foreach ($_) { remove-i
+tem <<<<  $_.fullname -Force -Recurse }
+    + CategoryInfo          : WriteError: (net40:DirectoryInfo) [Remove-Item], 
+    IOException
+    + FullyQualifiedErrorId : RemoveFileSystemItemIOError,Microsoft.PowerShell 
+   .Commands.RemoveItemCommand
+Remove-Item : Не удается удалить элемент C:\Mail.ru\C#_Курс3\Geekbrains_Course3
+\Projects\Other\Рассыльщик\packages\EntityFramework.6.1.3\lib: Папка не пуста.
+C:\Mail.ru\C#_Курс3\Geekbrains_Course3\Projects\Other\Рассыльщик\CleanVSProject
+.ps1:1 знак:81
++ Get-ChildItem .\ -include bin,obj,packages -Recurse | foreach ($_) { remove-i
+tem <<<<  $_.fullname -Force -Recurse }
+    + CategoryInfo          : WriteError: (lib:DirectoryInfo) [Remove-Item], I 
+   OException
+    + FullyQualifiedErrorId : RemoveFileSystemItemIOError,Microsoft.PowerShell 
+   .Commands.RemoveItemCommand
+Remove-Item : Не удается удалить элемент C:\Mail.ru\C#_Курс3\Geekbrains_Course3
+\Projects\Other\Рассыльщик\packages\EntityFramework.6.1.3\tools\EntityFramework
+.PowerShell.Utility.dll: Отказано в доступе по пути "EntityFramework.PowerShell
+.Utility.dll".
+C:\Mail.ru\C#_Курс3\Geekbrains_Course3\Projects\Other\Рассыльщик\CleanVSProject
+.ps1:1 знак:81
++ Get-ChildItem .\ -include bin,obj,packages -Recurse | foreach ($_) { remove-i
+tem <<<<  $_.fullname -Force -Recurse }
+    + CategoryInfo          : PermissionDenied: (EntityFramework.PowerShell.Ut 
+   ility.dll:FileInfo) [Remove-Item], UnauthorizedAccessException
+    + FullyQualifiedErrorId : RemoveFileSystemItemUnAuthorizedAccess,Microsoft 
+   .PowerShell.Commands.RemoveItemCommand
+Remove-Item : Не удается удалить элемент C:\Mail.ru\C#_Курс3\Geekbrains_Course3
+\Projects\Other\Рассыльщик\packages\EntityFramework.6.1.3\tools: Папка не пуста
+.
+C:\Mail.ru\C#_Курс3\Geekbrains_Course3\Projects\Other\Рассыльщик\CleanVSProject
+.ps1:1 знак:81
++ Get-ChildItem .\ -include bin,obj,packages -Recurse | foreach ($_) { remove-i
+tem <<<<  $_.fullname -Force -Recurse }
+    + CategoryInfo          : WriteError: (tools:DirectoryInfo) [Remove-Item], 
+    IOException
+    + FullyQualifiedErrorId : RemoveFileSystemItemIOError,Microsoft.PowerShell 
+   .Commands.RemoveItemCommand
+Remove-Item : Не удается удалить элемент C:\Mail.ru\C#_Курс3\Geekbrains_Course3
+\Projects\Other\Рассыльщик\packages\EntityFramework.6.1.3: Папка не пуста.
+C:\Mail.ru\C#_Курс3\Geekbrains_Course3\Projects\Other\Рассыльщик\CleanVSProject
+.ps1:1 знак:81
++ Get-ChildItem .\ -include bin,obj,packages -Recurse | foreach ($_) { remove-i
+tem <<<<  $_.fullname -Force -Recurse }
+    + CategoryInfo          : WriteError: (EntityFramework.6.1.3:DirectoryInfo 
+   ) [Remove-Item], IOException
+    + FullyQualifiedErrorId : RemoveFileSystemItemIOError,Microsoft.PowerShell 
+   .Commands.RemoveItemCommand
+Remove-Item : Не удается удалить элемент C:\Mail.ru\C#_Курс3\Geekbrains_Course3
+\Projects\Other\Рассыльщик\packages\Fody.2.0.0\Fody.dll: Отказано в доступе по 
+пути "Fody.dll".
+C:\Mail.ru\C#_Курс3\Geekbrains_Course3\Projects\Other\Рассыльщик\CleanVSProject
+.ps1:1 знак:81
++ Get-ChildItem .\ -include bin,obj,packages -Recurse | foreach ($_) { remove-i
+tem <<<<  $_.fullname -Force -Recurse }
+    + CategoryInfo          : PermissionDenied: (Fody.dll:FileInfo) [Remove-It 
+   em], UnauthorizedAccessException
+    + FullyQualifiedErrorId : RemoveFileSystemItemUnAuthorizedAccess,Microsoft 
+   .PowerShell.Commands.RemoveItemCommand
+Remove-Item : Не удается удалить элемент C:\Mail.ru\C#_Курс3\Geekbrains_Course3
+\Projects\Other\Рассыльщик\packages\Fody.2.0.0\FodyCommon.dll: Отказано в досту
+пе по пути "FodyCommon.dll".
+C:\Mail.ru\C#_Курс3\Geekbrains_Course3\Projects\Other\Рассыльщик\CleanVSProject
+.ps1:1 знак:81
++ Get-ChildItem .\ -include bin,obj,packages -Recurse | foreach ($_) { remove-i
+tem <<<<  $_.fullname -Force -Recurse }
+    + CategoryInfo          : PermissionDenied: (FodyCommon.dll:FileInfo) [Rem 
+   ove-Item], UnauthorizedAccessException
+    + FullyQualifiedErrorId : RemoveFileSystemItemUnAuthorizedAccess,Microsoft 
+   .PowerShell.Commands.RemoveItemCommand
+Remove-Item : Не удается удалить элемент C:\Mail.ru\C#_Курс3\Geekbrains_Course3
+\Projects\Other\Рассыльщик\packages\Fody.2.0.0\FodyIsolated.dll: Отказано в дос
+тупе по пути "FodyIsolated.dll".
+C:\Mail.ru\C#_Курс3\Geekbrains_Course3\Projects\Other\Рассыльщик\CleanVSProject
+.ps1:1 знак:81
++ Get-ChildItem .\ -include bin,obj,packages -Recurse | foreach ($_) { remove-i
+tem <<<<  $_.fullname -Force -Recurse }
+    + CategoryInfo          : PermissionDenied: (FodyIsolated.dll:FileInfo) [R 
+   emove-Item], UnauthorizedAccessException
+    + FullyQualifiedErrorId : RemoveFileSystemItemUnAuthorizedAccess,Microsoft 
+   .PowerShell.Commands.RemoveItemCommand
+Remove-Item : Не удается удалить элемент C:\Mail.ru\C#_Курс3\Geekbrains_Course3
+\Projects\Other\Рассыльщик\packages\Fody.2.0.0\Mono.Cecil.dll: Отказано в досту
+пе по пути "Mono.Cecil.dll".
+C:\Mail.ru\C#_Курс3\Geekbrains_Course3\Projects\Other\Рассыльщик\CleanVSProject
+.ps1:1 знак:81
++ Get-ChildItem .\ -include bin,obj,packages -Recurse | foreach ($_) { remove-i
+tem <<<<  $_.fullname -Force -Recurse }
+    + CategoryInfo          : PermissionDenied: (Mono.Cecil.dll:FileInfo) [Rem 
+   ove-Item], UnauthorizedAccessException
+    + FullyQualifiedErrorId : RemoveFileSystemItemUnAuthorizedAccess,Microsoft 
+   .PowerShell.Commands.RemoveItemCommand
+Remove-Item : Не удается удалить элемент C:\Mail.ru\C#_Курс3\Geekbrains_Course3
+\Projects\Other\Рассыльщик\packages\Fody.2.0.0\Mono.Cecil.Mdb.dll: Отказано в д
+оступе по пути "Mono.Cecil.Mdb.dll".
+C:\Mail.ru\C#_Курс3\Geekbrains_Course3\Projects\Other\Рассыльщик\CleanVSProject
+.ps1:1 знак:81
++ Get-ChildItem .\ -include bin,obj,packages -Recurse | foreach ($_) { remove-i
+tem <<<<  $_.fullname -Force -Recurse }
+    + CategoryInfo          : PermissionDenied: (Mono.Cecil.Mdb.dll:FileInfo)  
+   [Remove-Item], UnauthorizedAccessException
+    + FullyQualifiedErrorId : RemoveFileSystemItemUnAuthorizedAccess,Microsoft 
+   .PowerShell.Commands.RemoveItemCommand
+Remove-Item : Не удается удалить элемент C:\Mail.ru\C#_Курс3\Geekbrains_Course3
+\Projects\Other\Рассыльщик\packages\Fody.2.0.0\Mono.Cecil.Pdb.dll: Отказано в д
+оступе по пути "Mono.Cecil.Pdb.dll".
+C:\Mail.ru\C#_Курс3\Geekbrains_Course3\Projects\Other\Рассыльщик\CleanVSProject
+.ps1:1 знак:81
++ Get-ChildItem .\ -include bin,obj,packages -Recurse | foreach ($_) { remove-i
+tem <<<<  $_.fullname -Force -Recurse }
+    + CategoryInfo          : PermissionDenied: (Mono.Cecil.Pdb.dll:FileInfo)  
+   [Remove-Item], UnauthorizedAccessException
+    + FullyQualifiedErrorId : RemoveFileSystemItemUnAuthorizedAccess,Microsoft 
+   .PowerShell.Commands.RemoveItemCommand
+Remove-Item : Не удается удалить элемент C:\Mail.ru\C#_Курс3\Geekbrains_Course3
+\Projects\Other\Рассыльщик\packages\Fody.2.0.0\Mono.Cecil.Rocks.dll: Отказано в
+ доступе по пути "Mono.Cecil.Rocks.dll".
+C:\Mail.ru\C#_Курс3\Geekbrains_Course3\Projects\Other\Рассыльщик\CleanVSProject
+.ps1:1 знак:81
++ Get-ChildItem .\ -include bin,obj,packages -Recurse | foreach ($_) { remove-i
+tem <<<<  $_.fullname -Force -Recurse }
+    + CategoryInfo          : PermissionDenied: (Mono.Cecil.Rocks.dll:FileInfo 
+   ) [Remove-Item], UnauthorizedAccessException
+    + FullyQualifiedErrorId : RemoveFileSystemItemUnAuthorizedAccess,Microsoft 
+   .PowerShell.Commands.RemoveItemCommand
+Remove-Item : Не удается удалить элемент C:\Mail.ru\C#_Курс3\Geekbrains_Course3
+\Projects\Other\Рассыльщик\packages\Fody.2.0.0: Папка не пуста.
+C:\Mail.ru\C#_Курс3\Geekbrains_Course3\Projects\Other\Рассыльщик\CleanVSProject
+.ps1:1 знак:81
++ Get-ChildItem .\ -include bin,obj,packages -Recurse | foreach ($_) { remove-i
+tem <<<<  $_.fullname -Force -Recurse }
+    + CategoryInfo          : WriteError: (Fody.2.0.0:DirectoryInfo) [Remove-I 
+   tem], IOException
+    + FullyQualifiedErrorId : RemoveFileSystemItemIOError,Microsoft.PowerShell 
+   .Commands.RemoveItemCommand
+Remove-Item : Не удается удалить элемент C:\Mail.ru\C#_Курс3\Geekbrains_Course3
+\Projects\Other\Рассыльщик\packages: Папка не пуста.
+C:\Mail.ru\C#_Курс3\Geekbrains_Course3\Projects\Other\Рассыльщик\CleanVSProject
+.ps1:1 знак:81
++ Get-ChildItem .\ -include bin,obj,packages -Recurse | foreach ($_) { remove-i
+tem <<<<  $_.fullname -Force -Recurse }
+    + CategoryInfo          : WriteError: (C:\Mail.ru\C#_К...ыльщик\packages:D 
+   irectoryInfo) [Remove-Item], IOException
+    + FullyQualifiedErrorId : RemoveFileSystemItemIOError,Microsoft.PowerShell 
+   .Commands.RemoveItemCommand
