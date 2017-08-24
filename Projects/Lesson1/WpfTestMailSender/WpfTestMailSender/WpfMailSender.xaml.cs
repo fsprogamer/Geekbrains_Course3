@@ -20,10 +20,8 @@ namespace WpfTestMailSender
 
         private void btnSendEmail_Click(object sender, RoutedEventArgs e)
         {
-            List<string> listStrMails = new List<string> { "fsprogamer@gmail.com", "progamer@yandex.ru" };  // Список email'ов //кому мы отправляем письмо
+            List<string> listStrMails = new List<string> { "11111@gmail.com", "11111@yandex.ru" };  // Список email'ов //кому мы отправляем письмо
             string strPassword = passwordBox.Password;  // для WinForms - string strPassword = passwordBox.Text;
-            //var networkCredentialUserName = Properties.Settings.Default.NetworkCredentialUserName;
-            //var networkCredentialPassword = Properties.Settings.Default.NetworkCredentialPassword;
 
             //add reference System.Configuration
             var smtpSection = (SmtpSection)ConfigurationManager.GetSection("system.net/mailSettings/smtp");

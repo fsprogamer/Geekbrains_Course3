@@ -16,5 +16,9 @@ namespace Event
             MessageBox.Show("Координаты " + e.GetPosition(this).ToString());
         }
 
+        private void MainGrid_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+
+        }
     }
 }
