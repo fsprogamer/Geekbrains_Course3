@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfTestMailSender", "WpfTestMailSender\WpfTestMailSender.csproj", "{B4CB7C05-EA26-41B5-9593-F4C7B162B4BD}"
 EndProject
@@ -10,6 +10,12 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StartupUri", "StartupUri\StartupUri.csproj", "{9564DC0E-7A08-4C79-A3C1-CB298749D5BC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnStartup", "OnStartup\OnStartup.csproj", "{54DD7587-2D71-4CDA-96D4-11B346992653}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VisualTree", "VisualTree\VisualTree.csproj", "{350DD669-ED0D-472D-92D8-DC57B1872F3C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BtnFromCode", "BtnFromCode\BtnFromCode.csproj", "{FE34BB3C-DE8A-4624-AA1F-568E2491FB9A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Event", "Event\Event.csproj", "{AD343E72-0878-4D53-A2A0-2763E8B69A67}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +39,18 @@ Global
 		{54DD7587-2D71-4CDA-96D4-11B346992653}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{54DD7587-2D71-4CDA-96D4-11B346992653}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{54DD7587-2D71-4CDA-96D4-11B346992653}.Release|Any CPU.Build.0 = Release|Any CPU
+		{350DD669-ED0D-472D-92D8-DC57B1872F3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{350DD669-ED0D-472D-92D8-DC57B1872F3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{350DD669-ED0D-472D-92D8-DC57B1872F3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{350DD669-ED0D-472D-92D8-DC57B1872F3C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE34BB3C-DE8A-4624-AA1F-568E2491FB9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE34BB3C-DE8A-4624-AA1F-568E2491FB9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE34BB3C-DE8A-4624-AA1F-568E2491FB9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE34BB3C-DE8A-4624-AA1F-568E2491FB9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD343E72-0878-4D53-A2A0-2763E8B69A67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD343E72-0878-4D53-A2A0-2763E8B69A67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD343E72-0878-4D53-A2A0-2763E8B69A67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD343E72-0878-4D53-A2A0-2763E8B69A67}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

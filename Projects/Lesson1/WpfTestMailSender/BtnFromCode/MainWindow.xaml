@@ -1,0 +1,20 @@
+﻿<Window x:Class="BtnFromCode.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BtnFromCode"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid Name="mainGrid">
+        <!-- WrapPanel Name="pnlMain">
+        <!<Button FontWeight="Bold" Width="140" Height="30">
+            <WrapPanel Name="pnlMain">
+                <TextBlock Foreground="Blue">Разно</TextBlock>
+                <TextBlock Foreground="Red">цветная</TextBlock>
+                <TextBlock>кнопка</TextBlock>
+            </WrapPanel>
+        </Button>>
+        </-->
+    </Grid>
+</Window>
