@@ -23,30 +23,30 @@ namespace BtnFromCode
         {
             InitializeComponent();
 
-            Button btn = new Button();
-            btn.FontWeight = FontWeights.Bold;
-            btn.Width = 140;
-            btn.Height = 30;
+            //Button btn = new Button();
+            //btn.FontWeight = FontWeights.Bold;
+            //btn.Width = 140;
+            //btn.Height = 30;
 
-            WrapPanel pnl = new WrapPanel();
+            //WrapPanel pnl = new WrapPanel();
 
-            TextBlock txt = new TextBlock();
-            txt.Text = "Разно";
-            txt.Foreground = Brushes.Blue;
-            pnl.Children.Add(txt);
+            //TextBlock txt = new TextBlock();
+            //txt.Text = "Разно";
+            //txt.Foreground = Brushes.Blue;
+            //pnl.Children.Add(txt);
 
-            txt = new TextBlock();
-            txt.Text = "цветная";
-            txt.Foreground = Brushes.Red;
-            pnl.Children.Add(txt);
+            //txt = new TextBlock();
+            //txt.Text = "цветная";
+            //txt.Foreground = Brushes.Red;
+            //pnl.Children.Add(txt);
 
-            txt = new TextBlock();
-            txt.Text = "кнопка";
-            pnl.Children.Add(txt);
+            //txt = new TextBlock();
+            //txt.Text = "кнопка";
+            //pnl.Children.Add(txt);
 
-            btn.Content = pnl;
-            //pnlMain.Children.Add(btn);
-            mainGrid.Children.Add(btn);
+            //btn.Content = pnl;
+            ////pnlMain.Children.Add(btn);
+            //mainGrid.Children.Add(btn);
 
         }
     }

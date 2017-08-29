@@ -7,14 +7,14 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid Name="mainGrid">
-        <!-- WrapPanel Name="pnlMain">
-        <!<Button FontWeight="Bold" Width="140" Height="30">
-            <WrapPanel Name="pnlMain">
-                <TextBlock Foreground="Blue">Разно</TextBlock>
-                <TextBlock Foreground="Red">цветная</TextBlock>
-                <TextBlock>кнопка</TextBlock>
-            </WrapPanel>
-        </Button>>
-        </-->
+        <WrapPanel Name="pnlMain">
+            <Button FontWeight="Bold" Width="140" Height="30">
+                <WrapPanel Name="pnlMainWrap">
+                    <TextBlock Foreground="Blue">Разно</TextBlock>
+                    <TextBlock Foreground="Red">цветная</TextBlock>
+                    <TextBlock>кнопка</TextBlock>
+                </WrapPanel>
+            </Button>
+        </WrapPanel>
     </Grid>
 </Window>
