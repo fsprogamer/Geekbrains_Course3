@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<GenericTest name="helloworldapp" storage="c:\temp\unit тестирование c#\unit-testing-csharp-materials\001 introduction\007_additionalfeatures\helloworldapplication.tests\helloworldapp.generictest" id="1093370d-6f51-4731-9a67-502c2857e06b" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
-  <Command filename="c:\temp\Unit Тестирование C#\unit-testing-csharp-materials\001 Introduction\007_AdditionalFeatures\HelloWorldApplication\bin\Debug\HelloWorldApplication.exe" arguments="&quot;Hello world&quot;" workingDirectory="%TestOutputDirectory%" />
+<GenericTest name="helloworldapp" storage="c:\mail.ru\c#_курс3\geekbrains_course3\projects\unit-testing-csharp-materials\001 introduction\007_additionalfeatures\helloworldapplication.tests\helloworldapp.generictest" id="1093370d-6f51-4731-9a67-502c2857e06b" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Command filename="c:\Mail.ru\C#_Курс3\Geekbrains_Course3\Projects\unit-testing-csharp-materials\001 Introduction\007_AdditionalFeatures\HelloWorldApplication\bin\Debug\HelloWorldApplication.exe" arguments="&quot;Hello world&quot;" workingDirectory="%TestOutputDirectory%" />
   <SummaryXmlFile path="%TestOutputDirectory%\&lt;Enter summary file name here&gt;" />
 </GenericTest>

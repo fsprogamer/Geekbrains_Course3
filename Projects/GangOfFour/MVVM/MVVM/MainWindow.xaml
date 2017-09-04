@@ -26,7 +26,7 @@
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Margin="5" Orientation="Horizontal">
-                        <TextBlock Foreground="Crimson"  Text="{Binding Model, StringFormat={}{0}}" FontWeight="Bold" />
+                        <TextBlock Foreground="Crimson" Text="{Binding Model, StringFormat={}{0}}" FontWeight="Bold" />
                         <TextBlock Text="{Binding Path=MaxSpeed, StringFormat={} {0}}" />
                         <TextBlock Text="{Binding Path=Price, StringFormat={} {0}}" />
                     </StackPanel>

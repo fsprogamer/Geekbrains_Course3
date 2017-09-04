@@ -1,6 +1,5 @@
-﻿using System;
+﻿using CalcLibrary;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using CalcLibrary;
 
 namespace CalcLibraryTest
 {
@@ -8,12 +7,12 @@ namespace CalcLibraryTest
     public class CalcTests
     {
         [TestMethod]
-        public void Sum_10plus20_30returned()
+        public void Sum_1plus2_3returned()
         {
             // arrange
-            double x = 10;
-            double y = 20;
-            double expected = 30;
+            double x = 1;
+            double y = 2;
+            double expected = 3;
 
             // act
             double actual = Calc.Sum(x, y);

@@ -17,7 +17,7 @@ namespace ShopingCartLibrary.Tests
         {
             Debug.WriteLine("Test Initialize");
             item = new Item();
-            item.Name = "Unit Test Video Lessons";
+            item.Name = "Unit Test Lessons";
             item.Quantity = 10;
 
             cart = new ShoppingCart();
