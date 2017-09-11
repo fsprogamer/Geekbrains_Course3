@@ -1,8 +1,8 @@
 ﻿namespace NetQuestion
 {
 
-    //using System;
-    //using System.Reflection;
+    using System;
+    using System.Reflection;
 
     //class Sample
     //{
@@ -59,7 +59,7 @@
     //    public int i;
     //    public Func<int> Func()
     //    {
-    //        return () => i + 5; 
+    //        return () => i + 5;
     //    }
     //}
     //class Prog
@@ -118,8 +118,11 @@
     //{
     //    static void Main(string[] args)
     //    {
-    //        var s1 = new string(new[] { 't', 'e', 's', 't' });
-    //        var s2 = new string(new[] { 't', 'e', 's', 't' });
+    //        var s1 = "test";//new string(new[] { 't', 'e', 's', 't' });
+    //        var s2 = "test";//new string(new[] { 't', 'e', 's', 't' });
+
+    //        var result = String.IsInterned(s1);
+    //        result = String.IsInterned(s2);
 
     //        var o1 = (object)s1;
     //        var o2 = (object)s2;

@@ -36,6 +36,5 @@ namespace ParallelForEachTest
             Thread.Sleep(1000);
         }
 
-
     }
 }

@@ -48,7 +48,9 @@ namespace EmailSendServiceDLL
                 mm.Subject = strSubject;
                 mm.Body = strBody;
                 mm.IsBodyHtml = false;
-                SmtpClient sc = new SmtpClient(strSmtp, iSmtpPort);
+                SmtpClient sc = new SmtpClient(strSmtp, iSmtpPort); 
+                sc.Timeout = 100;
+                
                 sc.EnableSsl = true;
                 sc.DeliveryMethod = SmtpDeliveryMethod.Network;
                 sc.UseDefaultCredentials = false;

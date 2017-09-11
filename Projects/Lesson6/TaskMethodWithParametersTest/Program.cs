@@ -28,6 +28,7 @@ namespace TaskMethodWithParametersTest
             int x = 3;
             int y = 2;
             string message = "тестовое сообщение";
+         
             Console.WriteLine("Запуск задач.");
             Task<int> task1 = new Task<int>(() => TaskMethodAdd(x, y));
             task1.Start();
