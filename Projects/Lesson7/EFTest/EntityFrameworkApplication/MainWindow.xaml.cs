@@ -5,6 +5,7 @@ using OfficeOpenXml;
 using OfficeOpenXml.Style;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Reflection;
 using System.Windows;
@@ -32,7 +33,7 @@ namespace EntityFrameworkApplication
             if (!string.IsNullOrWhiteSpace(ArtistNameTxt.Text) && !string.IsNullOrWhiteSpace(TrackNameTxt.Text))
             {
                 AddNewTrack();
-                ReloadTracksList();
+                ReloadTracksList();//
             }
         }
         private void AddNewTrack()
@@ -47,8 +48,11 @@ namespace EntityFrameworkApplication
         }
         private void ReloadTracksList()
         {
-            TracksList = Сontext.Tracks.ToList();
-            Grid.ItemsSource = TracksList;
+            TracksList = Сontext.Tracks.ToList();//
+            Grid.ItemsSource = TracksList;//
+
+            //Сontext.Tracks.Load();
+            //Grid.ItemsSource = Сontext.Tracks.Local.ToBindingList();            
         }
 
         private void ReportViewerOnLoad(object sender, EventArgs eventArgs)
@@ -125,14 +129,14 @@ namespace EntityFrameworkApplication
                     Tracks[i - 1, 1] = Item.ArtistName.ToString();
                     Tracks[i - 1, 2] = Item.TrackName.ToString();
                 }
-                //sheet.get_Range("A2", "C3").Value2 = Tracks;
+                sheet.get_Range("A2", "C4").Value2 = Tracks;
 
-                //range = sheet.get_Range("D2", "D6");
-                //range.Formula = "=B2 & \" \" & C2";
+                range = sheet.get_Range("D2", "D6");
+                range.Formula = "=B2 & \" \" & C2";
 
                 ////AutoFit columns A:D.
-                //range = sheet.get_Range("A1", "D1");
-                //range.EntireColumn.AutoFit();
+                range = sheet.get_Range("A1", "D1");
+                range.EntireColumn.AutoFit();
 
             }
             catch (Exception theException)

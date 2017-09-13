@@ -7,7 +7,8 @@ namespace EntityFrameworkApplication
     {
         public SqlLocalDbContext() : base("SqlLocalDatabaseConnection")
         {
-            Database.SetInitializer(new DropCreateDatabaseIfModelChanges<SqlLocalDbContext>());
+            //Database.SetInitializer(new DropCreateDatabaseIfModelChanges<SqlLocalDbContext>());
+            Database.SetInitializer(new SqlLocalContextIntializer());
         }
         public virtual DbSet<Track> Tracks { get; set; }
     }
