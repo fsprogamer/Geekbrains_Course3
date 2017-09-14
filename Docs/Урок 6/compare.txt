@@ -1,0 +1,1 @@
+http://andrey.moveax.ru/post/csharp-async-vs-task-and-parallel
