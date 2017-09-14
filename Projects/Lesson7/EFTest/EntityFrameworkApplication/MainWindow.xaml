@@ -49,8 +49,8 @@
 			   Margin="5"
 			   AutoGenerateColumns="False"
 			   IsReadOnly="True"
-			   ItemsSource="{Binding TracksList}">
-            <DataGrid.Columns>
+               ItemsSource="{Binding}">
+               <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" 
 							Width="30" 
 							Binding="{Binding TrackId}" />

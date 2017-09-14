@@ -5,6 +5,7 @@ using OfficeOpenXml;
 using OfficeOpenXml.Style;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Data.Entity;
 using System.Linq;
 using System.Reflection;
@@ -16,12 +17,12 @@ namespace EntityFrameworkApplication
     public partial class MainWindow : Window
     {
         private SqlLocalDbContext Сontext;
-        public List<Track> TracksList;
+        public ObservableCollection<Track> TracksList { get; set; }
         public MainWindow()
         {
             InitializeComponent();
             Сontext = new SqlLocalDbContext();
-
+            
             ReportViewer.Load += ReportViewerOnLoad;
         }
         private void MainWindow_OnLoaded(object sender, RoutedEventArgs e)
@@ -33,7 +34,7 @@ namespace EntityFrameworkApplication
             if (!string.IsNullOrWhiteSpace(ArtistNameTxt.Text) && !string.IsNullOrWhiteSpace(TrackNameTxt.Text))
             {
                 AddNewTrack();
-                ReloadTracksList();//
+                //ReloadTracksList();//
             }
         }
         private void AddNewTrack()
@@ -48,11 +49,32 @@ namespace EntityFrameworkApplication
         }
         private void ReloadTracksList()
         {
-            TracksList = Сontext.Tracks.ToList();//
-            Grid.ItemsSource = TracksList;//
+            //1
+            //ItemsSource="{Binding}"
+            Сontext.Tracks.Load();
+            Grid.DataContext = Сontext.Tracks.Local;
 
+            //2
+            //ItemsSource="{Binding TracksList}"
             //Сontext.Tracks.Load();
-            //Grid.ItemsSource = Сontext.Tracks.Local.ToBindingList();            
+            //TracksList = Сontext.Tracks.Local;
+            //DataContext = this;
+
+            //3
+            //ItemsSource="{Binding} удалить"
+            //Сontext.Tracks.Load();
+            //Grid.ItemsSource = Сontext.Tracks.Local.ToBindingList();   
+
+            //4
+            //public List<Track> TracksList { get; set; }
+            //ItemsSource="{Binding TracksList}"
+            //TracksList = Сontext.Tracks.ToList();      
+            //Grid.ItemsSource = lst;
+
+            //5
+            //ItemsSource="{Binding}"
+            //List<Track> lst = Сontext.Database.SqlQuery<Track>("SELECT * FROM Tracks where TrackId=1").ToList();            
+            //Grid.DataContext = lst;
         }
 
         private void ReportViewerOnLoad(object sender, EventArgs eventArgs)
