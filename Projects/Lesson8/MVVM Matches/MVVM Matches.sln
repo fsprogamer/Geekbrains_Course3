@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinqTest", "LinqTest\LinqTe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonLibrary", "CommonLibrary\CommonLibrary.csproj", "{9DC14CA9-8EF1-4362-BD24-0398849263CE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncVsTaskDemo", "Compare\AsyncVsTaskDemo.csproj", "{204DADF7-9C87-45F5-A039-AED3D0136888}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{9DC14CA9-8EF1-4362-BD24-0398849263CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9DC14CA9-8EF1-4362-BD24-0398849263CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9DC14CA9-8EF1-4362-BD24-0398849263CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{204DADF7-9C87-45F5-A039-AED3D0136888}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{204DADF7-9C87-45F5-A039-AED3D0136888}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{204DADF7-9C87-45F5-A039-AED3D0136888}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{204DADF7-9C87-45F5-A039-AED3D0136888}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
