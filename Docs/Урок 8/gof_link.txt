@@ -1,0 +1,3 @@
+http://www.dofactory.com/net/abstract-factory-design-pattern
+
+http://cpp-reference.ru/patterns/creational-patterns/abstract-factory/
