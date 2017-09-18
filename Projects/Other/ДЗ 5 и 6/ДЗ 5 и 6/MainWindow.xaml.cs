@@ -130,35 +130,38 @@ namespace ДЗ_5_и_6
 
         private void ButtonMatrix_Click(object sender, RoutedEventArgs e)
         {
-            Task t = new Task(() =>
-            {
-                int[,] matrix1 = new int[100, 100];
+            //Task t = new Task(() =>
+            //{
+                int[,] matrix1 = new int[2, 2];
                 matrix1 = FillMatrix(matrix1);
-                int[,] matrix2 = new int[100, 100];
+                int[,] matrix2 = new int[2, 2];
                 matrix2 = FillMatrix(matrix2);
-                int[,] matrix3 = new int[100, 100];
+                int[,] matrix3 = new int[2, 2];
 
-                Parallel.For(0, 100, i =>
-              {
-                  for (int j = 0; j < 100; j++)
+            Parallel.For(0, 2, i =>
+          {
+              for (int j = 0; j < 2; j++)
                   {
                       matrix3[i, j] = 0;
-                      for (int k = 0; k < 100; k++)
+                      for (int k = 0; k < 2; k++)
                       {
-                          matrix3[i, j] += matrix3[i, k] * matrix3[k, j];
+                          matrix3[i, j] += matrix1[i, k] * matrix2[k, j];
                       }
                       Thread.Sleep(1);
                   }
 
-              });
-                MessageBox.Show("Перемножение окончено");
+          });
+            MessageBox.Show("Перемножение окончено");
 
-            }
-            );
-            t.Start();
-
-
+            //}
+            //);
+            //t.Start();
         }
+
+        static void ParallelMethod(int iteration)
+        {
+        }
+
         public int[,] FillMatrix(int[,] matrix)
         {
             Random r = new Random();
